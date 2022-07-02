@@ -34,7 +34,7 @@ public class ImageService {
         ImageWriteParam param = writer.getDefaultWriteParam();
 
         param.setCompressionMode(ImageWriteParam.MODE_EXPLICIT);
-        param.setCompressionQuality(0.05f);  // Change the quality value you prefer
+        param.setCompressionQuality(corruptionLevel);  // Change the quality value you prefer
         writer.write(null, new IIOImage(image, null, null), param);
 
         os.close();
@@ -45,6 +45,6 @@ public class ImageService {
     public void saveImage(String chatId, BufferedImage image) throws IOException {
 
         File outputFile = new File("src/main/resources/photos/" + chatId + "/image.jpg");
-        ImageIO.write(image, "png", outputFile);
+        ImageIO.write(image, "jpg", outputFile);
     }
 }
