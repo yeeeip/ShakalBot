@@ -26,14 +26,14 @@ public class ShakalBot extends TelegramLongPollingBot {
 
     private static final Logger logger = LoggerFactory.getLogger(ShakalBot.class);
 
-//    @Value("${bot.choose}")
-    private String botChoose = System.getenv("bot.choose");
-//    @Value("${bot.start}")
-    private String startPhrase = System.getenv("bot.start");
-//    @Value("${bot.token}")
-    private String botToken = System.getenv("bot.token");
-//    @Value("${bot.username}")
-    private String botUsername = System.getenv("bot.username");
+    @Value("${bot.choose}")
+    private String botChoose;
+    @Value("${bot.start}")
+    private String startPhrase;
+    @Value("${bot.token}")
+    private String botToken;
+    @Value("${bot.username}")
+    private String botUsername;
 
     @Autowired
     private ImageService imageService;
